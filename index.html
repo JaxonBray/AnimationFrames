@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        div {
+  height: 50px;
+  width: 50px;
+  background-color: gray;
+  margin-bottom: 10vh;
+}
+div.container {
+  background-color: transparent;
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
+@keyframes rightAndBack {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    /*     transform: translateX(0); */
+    transform: translateX(-100px);
+  }
+}
+
+div#move-horizontal-stop {
+  background-color: red;
+  animation: moveRight 2s linear infinite;
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+div.inline {
+  display: inline-block;
+}
+div#move-vertical-stop {
+  background-color: blue;
+
+  animation: moveDown 2s ease-in-out infinite;
+}
+
+div#orange {
+  background-color: orange;
+  animation: rightAndBack 3s linear infinite;
+}
+
+@keyframes weird {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(250px);
+  }
+  50% {
+    transform: translateY(-300px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+div#name {
+  background-color: purple;
+  animation: weird 5s ease-in-out infinite;
+}
+    </style>
+</head>
+<body>
+    <div style="float: left; width: 40%; margin-right: 5vw" class="container">
+
+  <div id="move-horizontal-stop"></div>
+  <div id="orange"></div>
+  <div id="name"></div>
+
+</div>
+<div style="float: right; width: 40%;" class="container">
+  <div id="move-vertical-stop" class="inline"></div>
+</div>
+</body>
+</html>
